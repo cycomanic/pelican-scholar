@@ -47,7 +47,7 @@ def add_scholar(generator, metadata):
     generator.context['scholar_cites_per_year'] = citations
     cites_total = 0
     for i in range(len(citations)):
-        cites_total + = ciations[i][1]
+        cites_total += citations[i][1]
     generator.context['scholar_cites_total'] = cites_total
     generator.context['scholar_hindex']  = author.hindex
     generator.context['scholar_hindex5y'] = author.hindex5y
