@@ -11,6 +11,7 @@ A Pelican plugin that populates the context with Google Scholar information.
 import logging
 logger = logging.getLogger(__name__)
 import os
+import datetime
 import scholarly
 
 from pelican import signals
@@ -55,6 +56,7 @@ def add_scholar(generator, metadata):
     generator.context['scholar_i10index5y'] = author.i10index5y
     generator.context['scholar_interests']  = author.interests
     generator.context['scholar_name'] = author.name
+    generator.context['scholar_date'] = datetime.date.today().strftime("%m/%Y")
 
 def register():
     signals.page_generator_context.connect(add_scholar)
